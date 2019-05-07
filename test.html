@@ -94,15 +94,33 @@
     </div>
     <script>
       const users = [];
-      const displaySelectedUser = () => {
-
-		};
+            const getSelectedUser = (userId) => {
+      		userId.find((user, index) => {
+              
+            });
+        };
+      const displaySelectedUser = (event) => {
+      console.log(`Shit was selected`)
+        };
       const letsCalculateBMI = () => {
 
 		};
       const  powerupTheUI = () => {
-
+     const selectElement = document.querySelector('.select-text');
+    selectElement.addEventListener('change', displaySelectedUser);
+ const onClick = document.querySelector('#oracle');
+    selectElement.addEventListener('click', letsCalculateBMI);
+        
 		};
+      const displayUsers = (users) =>{
+	const selectElement = document.querySelector('.select-text');
+	users.forEach((user, index) => {
+	const option = document.createElement('option');
+      option.value = user.id
+	option.text = user.name
+	selectElement.add(option, index);
+	});
+      };
       
       
       const fetchAndDisplayUsers = () => {
@@ -113,6 +131,14 @@
           country: 'Nigeria',
           name: 'Charles Odili',
           id: 'dfhb454768DghtF'
+        },
+                   {
+          age: 45,
+          weight: 78,
+          height: 5,
+          country: 'Nigeria',
+          name: 'Nosa Thor',
+          id: 'dfhb454768DghtFtoe'
         });
 
         displayUsers(users);
