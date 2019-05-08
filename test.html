@@ -95,9 +95,12 @@
     <script>
       const users = [];
             const getSelectedUser = (userId) => {
-      		userId.find((user, index) => {
+              const 	userOne = users.find(user => user.userId === id);
+             const {age, weight, height, name, id} = 	userOne;
+              console.log(userOne)
+              return userOne;
               
-            });
+            
         };
       const displaySelectedUser = (event) => {
       console.log(`Shit was selected`)
